@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://ep-tiny-haze-ad6ao5mc-pooler.c-2.us-east-1.aws.neon.tech/briseyda_arbizu_01?sslmode=require&channel_binding=require
+    username: neondb_owner
+    password: npg_H6Me4qTLdoQN
+  sql:
+    init:
+      mode: never # Crea la tabla automáticamente al iniciar
+      schema-locations: classpath:schema.sql # Archivo con la estructura de la tabla
+      data-locations: classpath:data.sql # Archivo con datos iniciales (opcional)
+  logging:
+    level:
+      org.springframework.r2dbc: DEBUG
